@@ -595,7 +595,7 @@ namespace toDo
                     form.Close();
             }
 
-            // Form for task selection and deletion
+            
             Form taskSelectionForm = new Form
             {
                 Text = "Select Task to Delete",
@@ -615,7 +615,7 @@ namespace toDo
                 ItemHeight = 20
             };
 
-            // Populate ListBox with task names
+            
             foreach (var task in tasks[date])
             {
                 taskListBox.Items.Add(task.Name);
@@ -644,15 +644,15 @@ namespace toDo
 
                 if (taskToDelete != null)
                 {
-                    tasks[date].Remove(taskToDelete); // Remove task from the list
+                    tasks[date].Remove(taskToDelete); 
 
                     if (tasks[date].Count == 0)
                     {
-                        tasks.Remove(date); // Remove the date if no tasks remain
+                        tasks.Remove(date); 
                     }
 
-                    RenderCalendar(selectedDate); // Refresh the calendar UI
-                    taskSelectionForm.Close(); // Close the selection form
+                    RenderCalendar(selectedDate); 
+                    taskSelectionForm.Close(); 
                 }
             };
 
